@@ -5,46 +5,78 @@ import no.hvl.dat100.jplab11.oppgave1.*;
 
 public class Blogg {
 
-	// TODO: objektvariable 
+	Innlegg[] innleggtabell;
+	int nesteledig;
 
 	public Blogg() {
-		throw new UnsupportedOperationException(TODO.constructor("Blogg"));
+		innleggtabell = new Innlegg[20];
+		
 	}
 
 	public Blogg(int lengde) {
-		throw new UnsupportedOperationException(TODO.constructor("Blogg"));
+		innleggtabell = new Innlegg[lengde];
 	}
 
 	public int getAntall() {
-		throw new UnsupportedOperationException(TODO.method());
+		int antall = 0;
+		for (int i = 0; i < innleggtabell.length; i++) {
+			antall = antall + 1;
+		}
+		return antall;
 	}
 	
 	public Innlegg[] getSamling() {
-		throw new UnsupportedOperationException(TODO.method());
+		return innleggtabell;
 
 	}
 	
 	public int finnInnlegg(Innlegg innlegg) {
-
-		throw new UnsupportedOperationException(TODO.method());
+		for (int i = 0; i < innleggtabell.length; i++) {
+			if(innleggtabell[i].getId() == innlegg.getId()) {
+				return innleggtabell[i].getId();
+			}
+			}
+		return -1;
+		
 	}
 
 	public boolean finnes(Innlegg innlegg) {
-		throw new UnsupportedOperationException(TODO.method());
+		for (int i = 0; i < innleggtabell.length; i++) {
+			if(innleggtabell[i].getId() == innlegg.getId()) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	public boolean ledigPlass() {
-		throw new UnsupportedOperationException(TODO.method());
+		for (int i = 0; i < innleggtabell.length; i++) {
+			if (innleggtabell[i] == null) {
+				return true;
+			}
+		}
+		return false;
+		}
 
-	}
 	
 	public boolean leggTil(Innlegg innlegg) {
-
-		throw new UnsupportedOperationException(TODO.method());
+		for (int i = 0; i < innleggtabell.length; i++) {
+			if (innleggtabell[i] == null) {
+				innleggtabell[i] = innlegg;
+				return true;
+			}
+		}
+		return false;
+		
 	}
 	
 	public String toString() {
-		throw new UnsupportedOperationException(TODO.method());
+		String str = null;
+		for (int i = 0; i < innleggtabell.length; i++) {
+			str = str + "\n" + innleggtabell[i].getClass() + "\n" + innleggtabell[i].getId() + "\n" + innleggtabell[i].getBruker() + "\n" + innleggtabell[i].getDato() + "\n" + innleggtabell[i].getLikes();
+		
+		}
+		return str;
 	}
 
 	// valgfrie oppgaver nedenfor

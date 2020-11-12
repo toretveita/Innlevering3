@@ -4,67 +4,88 @@ import no.hvl.dat100.jplab11.common.TODO;
 
 public abstract class Innlegg {
 	
-	// TODO - deklarering av objektvariable
+	int id;
+	String bruker;
+	String dato;
+	int likes;
+	
+	
 	
 	public Innlegg() {
 		
 	}
 	
-	public Innlegg(int id, String bruker, String dato) {
+	public Innlegg(int Id, String Bruker, String Dato) {
 
 		// TODO 
-		throw new UnsupportedOperationException(TODO.constructor("Innlegg"));
+		id = Id;
+		bruker = Bruker;
+		dato = Dato;
 	}
 
-	public Innlegg(int id, String bruker, String dato, int likes) {
+	public Innlegg(int Id, String Bruker, String Dato, int Likes) {
 
 		// TODO - START
 		
-		throw new UnsupportedOperationException(TODO.constructor("Innlegg"));
+		id = Id;
+		bruker = Bruker;
+		dato = Dato;
+		likes = Likes;
+		
+		
 	}
 	
 	public String getBruker() {
 		
-		throw new UnsupportedOperationException(TODO.method());
+		return bruker;
 
 	}
 
-	public void setBruker(String bruker) {
-		throw new UnsupportedOperationException(TODO.method());
+	public void setBruker(String Bruker) {
+		bruker = Bruker;
 	}
 
 	public String getDato() {
-		throw new UnsupportedOperationException(TODO.method());
+		return dato;
 		
 	}
 
-	public void setDato(String dato) {
-		throw new UnsupportedOperationException(TODO.method());
+	public void setDato(String Dato) {
+		dato = Dato;
 	}
 
 	public int getId() {
-		throw new UnsupportedOperationException(TODO.method());
+		return id;
 
 	}
 
 	public int getLikes() {
-		throw new UnsupportedOperationException(TODO.method());
+		return likes;
 
 	}
 	
 	public void doLike () {
-		throw new UnsupportedOperationException(TODO.method());
+		likes = likes + 1;
 	}
 	
 	public boolean erLik(Innlegg innlegg) {
-		throw new UnsupportedOperationException(TODO.method());
-
+		
+		int ID = innlegg.getId();
+		if (id == ID){
+		return true;
+		}
+		else {
+			return false;
+		}
+		
 	}
 	
 	@Override
 	public String toString() {
 		
-		throw new UnsupportedOperationException(TODO.method());
+		String str;
+		str = id + "\n" + bruker + "\n" + dato + "\n" + likes + "\n";
+		return str;
 				
 	}
 	

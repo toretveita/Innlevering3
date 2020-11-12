@@ -5,32 +5,37 @@ import no.hvl.dat100.jplab11.oppgave1.*;
 
 public class Tekst extends Innlegg {
 
-	// TODO: objektvariable 
+	String tekst;
 	
 	public Tekst () {
 		
 	}
 	
-	public Tekst(int id, String bruker, String dato, String tekst) {
-		throw new UnsupportedOperationException(TODO.constructor("Tekst"));
+	public Tekst(int Id, String Bruker, String Dato, String Tekst) {
+		super(Id, Bruker, Dato);
+		tekst = Tekst;
 	}
 	
-	public Tekst(int id, String bruker, String dato, int likes, String tekst) {
-		throw new UnsupportedOperationException(TODO.constructor("Tekst"));
+	public Tekst(int Id, String Bruker, String Dato, int Likes, String Tekst) {
+		super(Id, Bruker, Dato, Likes);
+		tekst = Tekst;
 	}
 	
 	public String getTekst() {
-		throw new UnsupportedOperationException(TODO.method());
+		return tekst;
 
 	}
 
-	public void setTekst(String tekst) {
-		throw new UnsupportedOperationException(TODO.method());
+	public void setTekst(String Tekst) {
+		tekst = Tekst;
 	}
 
 	@Override
 	public String toString() {
-		throw new UnsupportedOperationException(TODO.method());
+		String str;
+		str = super.toString();
+		str = "TEKST" + "\n" + str + tekst + "\n";
+		return str;
 
 	}
 	
